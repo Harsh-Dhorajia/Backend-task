@@ -3,6 +3,7 @@ const {
   postTweet,
   updateTweet,
   getTweet,
+  deleteTweet
 } = require("../../controllers/TweetsController");
 const router = express.Router();
 const tweetValidation = require("../../validators/tweets/tweets-validation");
@@ -17,10 +18,15 @@ router.post(
 router.put(
   "/edit-tweet/:tweetId",
   authenticatedUser,
-  tweetValidation.updateTweet,
+  tweetValidation.editTweet,
   updateTweet
 );
 
-router.put("/get-tweet/:tweetId", authenticatedUser, getTweet);
+router.get("/get-tweet/:tweetId", authenticatedUser, getTweet);
 
+router.delete(
+  "/delete-tweet/:tweetId",
+  authenticatedUser,
+  deleteTweet
+);
 module.exports = router;

@@ -13,4 +13,5 @@ module.exports = {
   PERMISSION_NOT_FOUND: "You cannot update other's tweets",
   TWEET_UPDATED: 'The Tweet Message was updated successfully',
   TWEET_FETCHED: 'The Tweet Message was fetched',
+  TWEET_DELETED: 'The Tweet Message was Deleted',
 };
