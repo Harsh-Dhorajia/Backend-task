@@ -24,5 +24,11 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+  User.associate = models => {
+    User.hasMany(models.Tweet, {
+      foreignKey: 'createdBy',
+      as: 'tweets',
+    });
+  };
   return User;
 };

@@ -7,5 +7,6 @@ module.exports = {
   SERVER_ERROR: 'Something went wrong',
   TOKEN_REQUIRED: 'Authentication error. Token required.',
   INVALID_TOKEN: 'You are not authorized to perform this action',
-  LOGOUT_SUCCESS: 'User logged out successfully'
+  LOGOUT_SUCCESS: 'User logged out successfully',
+  TWEET_ADDED: 'New Tweet Message was added successfully',
 };
