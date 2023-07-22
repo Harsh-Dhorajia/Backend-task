@@ -3,7 +3,8 @@ const {
   postTweet,
   updateTweet,
   getTweet,
-  deleteTweet
+  deleteTweet,
+  tweetsFeed
 } = require("../../controllers/TweetsController");
 const router = express.Router();
 const tweetValidation = require("../../validators/tweets/tweets-validation");
@@ -29,4 +30,7 @@ router.delete(
   authenticatedUser,
   deleteTweet
 );
+
+router.get("/tweet-feeds", authenticatedUser, tweetsFeed);
+
 module.exports = router;

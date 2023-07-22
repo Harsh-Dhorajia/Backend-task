@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Follower = sequelize.define("Follower", {
-      user_id: {
+      followed_id: {
         type: DataTypes.INTEGER,
         allowEmpty: false,
         allowNull: false,
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     Follower.associate = models => {
       Follower.belongsTo(models.User, {
         as: 'user',
-        foreignKey: 'user_id',
+        foreignKey: 'followed_id',
         // onDelete: 'CASCADE',
       });
       Follower.belongsTo(models.User, {
