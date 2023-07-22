@@ -24,4 +24,8 @@ module.exports = {
         const value = await tweetsSchema.postTweet.validate(req.body);
         errorMessage(value, res, next);
     },
+    editTweet: async (req, res, next) => {
+        const value = await tweetsSchema.editTweet.validate(req.body);
+        errorMessage(value, res, next);
+    },
 };

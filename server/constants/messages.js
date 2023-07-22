@@ -9,4 +9,7 @@ module.exports = {
   INVALID_TOKEN: 'You are not authorized to perform this action',
   LOGOUT_SUCCESS: 'User logged out successfully',
   TWEET_ADDED: 'New Tweet Message was added successfully',
+  TWEET_NOT_FOUND: 'The Tweet Message was not found',
+  PERMISSION_NOT_FOUND: "You cannot update other's tweets",
+  TWEET_UPDATED: 'The Tweet Message was updated successfully',
 };

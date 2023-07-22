@@ -10,7 +10,7 @@ const register = async (req, res) => {
 
     const createdTweet = await Tweet.create({
       message,
-      user_id: req.user.id,
+      createdBy: req.user.id,
     });
     return res.send({
       message: TWEET_ADDED,
