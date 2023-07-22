@@ -1,8 +1,6 @@
 /* eslint-disable no-shadow */
 const bcrypt = require('bcryptjs');
 const { User } = require('../../models');
-const { validateRegisterInput } = require('../../validators/userValidators');
-const { generateToken } = require('../../utils/generateToken');
 const {
   USER_REGISTER_SUCCESS,
   USER_ALREADY_EXISTS,
@@ -30,12 +28,10 @@ const register = async (req, res) => {
         message: SERVER_ERROR,
       });
     }
-    const token = await generateToken(user);
     return res.send({
       message: USER_REGISTER_SUCCESS,
       data: {
         user,
-        token,
       },
     });
   } catch (error) {
@@ -44,8 +40,4 @@ const register = async (req, res) => {
     return res.send(error);
   }
 }
-module.exports = {
-  async register(req, res) {
-    
-  },
-};
+module.exports = register;

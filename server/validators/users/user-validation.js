@@ -24,4 +24,8 @@ module.exports = {
         const value = await UserSchema.register.validate(req.body);
         errorMessage(value, res, next);
     },
+    login: async (req, res, next) => {
+        const value = await UserSchema.login.validate(req.body);
+        errorMessage(value, res, next);
+    },
 };

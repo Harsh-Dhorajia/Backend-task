@@ -1,25 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    username: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      allowEmpty: false,
+      allowNull: false,
+      isUnique: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowEmpty: false,
       allowNull: false,
       isUnique: true,
     },
-    password: DataTypes.STRING,
-    resetPasswordToken: DataTypes.STRING,
-    resetPasswordExpires: DataTypes.STRING,
-    created_at: {
-      type: 'TIMESTAMP',
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-      allowNull: false
+    password: {
+      type: DataTypes.STRING,
+      allowEmpty: false,
+      allowNull: false,
     },
-    updated_at: {
-      type: 'TIMESTAMP',
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-      allowNull: false
-    }
+    authToken: {
+      type: DataTypes.STRING,
+      allowEmpty: false,
+      allowNull: true,
+    },
   });
 
   return User;
