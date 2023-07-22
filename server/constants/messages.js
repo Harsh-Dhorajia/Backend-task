@@ -14,4 +14,6 @@ module.exports = {
   TWEET_UPDATED: 'The Tweet Message was updated successfully',
   TWEET_FETCHED: 'The Tweet Message was fetched',
   TWEET_DELETED: 'The Tweet Message was Deleted',
+  FOLLWOER_ADDED: 'You had followed the user',
+  UNFOLLOW_USER: 'The user unfollowed successfully'
 };

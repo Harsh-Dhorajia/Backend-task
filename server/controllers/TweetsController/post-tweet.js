@@ -1,7 +1,7 @@
 const { Tweet } = require("../../models");
 const { TWEET_ADDED } = require("../../constants/messages");
 
-const register = async (req, res) => {
+const createTweet = async (req, res) => {
   try {
     const { message } = req.body;
     if (!message || !message.length) {
@@ -22,4 +22,4 @@ const register = async (req, res) => {
     return res.send(error);
   }
 };
-module.exports = register;
+module.exports = createTweet;
