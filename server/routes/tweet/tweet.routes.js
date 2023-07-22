@@ -1,5 +1,9 @@
 const express = require("express");
-const { postTweet, updateTweet } = require("../../controllers/TweetsController");
+const {
+  postTweet,
+  updateTweet,
+  getTweet,
+} = require("../../controllers/TweetsController");
 const router = express.Router();
 const tweetValidation = require("../../validators/tweets/tweets-validation");
 const { authenticatedUser } = require("../../middleware/authenticatedUser");
@@ -10,11 +14,13 @@ router.post(
   postTweet
 );
 
-router.post(
+router.put(
   "/edit-tweet/:tweetId",
   authenticatedUser,
-  tweetValidation.
+  tweetValidation.updateTweet,
   updateTweet
 );
+
+router.put("/get-tweet/:tweetId", authenticatedUser, getTweet);
 
 module.exports = router;
