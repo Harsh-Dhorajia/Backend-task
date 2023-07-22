@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     createdBy: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowEmpty: false,
       allowNull: false,
     },
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Tweet.associate = models => {
     Tweet.belongsTo(models.User, {
-      as: 'users',
+      as: 'creator',
       foreignKey: 'createdBy',
       onDelete: 'CASCADE',
     });

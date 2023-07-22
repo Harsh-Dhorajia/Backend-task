@@ -1,7 +1,6 @@
 /* eslint-disable no-shadow */
 const bcrypt = require('bcryptjs');
 const { User } = require('../../models');
-const { validateLoginInput } = require('../../validators/userValidators');
 const { generateToken } = require('../../utils/generateToken');
 const {
   USER_NOT_FOUND,
