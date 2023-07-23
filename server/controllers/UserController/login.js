@@ -12,6 +12,7 @@ const login = async (req, res) => {
   try {
     const { username, password } = req.body;
 
+    // fetch if user exists or not
     const user = await User.findOne({
       where: {
         [Op.or]: [{ email: username }, { username }],
@@ -21,10 +22,12 @@ const login = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: USER_NOT_FOUND });
     }
+    // check if the user has entered the password correctly
     const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
       return res.status(400).json({ message: INVALID_USER_OR_PASSWORD });
     }
+    // generate JWT auth token and save in user table
     const token = await generateToken(user);
     await User.update(
       {

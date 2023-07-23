@@ -5,7 +5,7 @@ const { TWEET_NOT_FOUND, TWEET_FETCHED } = require('../../constants/messages');
 
 const getTweet = async (req, res) => {
     try {
-      // Get event detail with their invited users
+      // Get Tweet by its id
       const tweet = await Tweet.findByPk(req.params.tweetId, {
         include: [
           { model: User, as: 'creator', attributes: ['username', 'email'] },

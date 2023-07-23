@@ -5,13 +5,14 @@ const { Op } = require("sequelize");
 
 const getTweet = async (req, res) => {
   try {
-    // Get event detail with their invited users
+    // Get all follwer of loggedin user
     let users = await Follower.findAll({
       where: { follower_id: req.user.id },
       attributes: ["followed_id"],
     });
     let userIds = users.map((user) => user.followed_id);
     userIds.push(req.user.id);
+    // fetch all tweets created by their followers
     const tweets = await Tweet.findAll({
       where: {
         createdBy: { [Op.in]: userIds },

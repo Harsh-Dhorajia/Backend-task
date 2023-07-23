@@ -12,11 +12,15 @@ const register = async (req, res) => {
     const { username, email } = req.body;
     let { password } = req.body;
 
-    const userAlreadyExist = await User.findOne({ where: { email } });
+    // check if email or username already exists or not
+    const userAlreadyExist = await User.findOne({ where: { where: {
+      [Op.or]: [{ email: email }, { username }],
+    }, } });
 
     if (userAlreadyExist) {
       return res.status(400).json({ message: USER_ALREADY_EXISTS });
     }
+    // encrypt the password and save user in user table
     password = await bcrypt.hash(password, 12);
     const user = await User.create({
       username,

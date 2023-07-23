@@ -4,10 +4,17 @@ const { TWEET_NOT_FOUND, TWEET_DELETED } = require("../../constants/messages");
 
 const deleteTweet = async (req, res) => {
   try {
-    // Get event detail with their invited users
+    // tweet exists for selected
     const isTweetExists = await Tweet.findByPk(req.params.tweetId);
 
     if (!isTweetExists) return res.json({ message: TWEET_NOT_FOUND });
+    // check if user has access to delete tweet
+    if (isTweetExists.createdBy !== req.user.id) {
+      return res.json({
+        message: PERMISSION_NOT_FOUND,
+      });
+    }
+    // delete tweet from tweet table
     await Tweet.destroy({
       where: { id: req.params.tweetId },
     });

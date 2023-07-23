@@ -5,10 +5,12 @@ const follow = async (req, res) => {
   try {
     const { user_id } = req.body;
 
+    // find user exist or not
     const isUserExists = await User.findByPk(user_id);
     if (!isUserExists) {
       return res.status(404).send({ message: "User does not exist" });
     }
+    // create record in follower table
     await Follower.create({
       followed_id: req.user.id,
       follower_id: user_id,

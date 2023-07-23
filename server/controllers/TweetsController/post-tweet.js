@@ -8,6 +8,7 @@ const createTweet = async (req, res) => {
       return res.status(400).send({ message: "Please enter a Tweet message" });
     }
 
+    // create tweet record with given message
     const createdTweet = await Tweet.create({
       message,
       createdBy: req.user.id,
