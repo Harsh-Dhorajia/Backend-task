@@ -8,7 +8,7 @@ const unFollow = async (req, res) => {
 
     const followExists = await Follower.findOne({
       where: {
-        user_id: req.user.id,
+        followed_id: req.user.id,
         follower_id: user_id
       }
     });
@@ -16,8 +16,10 @@ const unFollow = async (req, res) => {
       return res.status(404).send({ message: "Follower does not exist" });
     }
     await Follower.destroy({
-      user_id: req.user.id,
-      follower_id: user_id,
+      where: {
+        followed_id: req.user.id,
+        follower_id: user_id,
+      }
     });
 
     return res.send({

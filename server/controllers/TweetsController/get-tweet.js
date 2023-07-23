@@ -8,7 +8,7 @@ const getTweet = async (req, res) => {
       // Get event detail with their invited users
       const tweet = await Tweet.findByPk(req.params.tweetId, {
         include: [
-          { model: User, as: 'users', attributes: ['username', 'email'] },
+          { model: User, as: 'creator', attributes: ['username', 'email'] },
         ],
         attributes: ['message'],
       });

@@ -1,6 +1,5 @@
 /* eslint-disable no-shadow */
-const { User } = require("../../models");
-const { Tweet } = require("../../models");
+const { Tweet, Follower } = require("../../models");
 const { TWEET_NOT_FOUND, TWEET_FETCHED } = require("../../constants/messages");
 const { Op } = require("sequelize");
 

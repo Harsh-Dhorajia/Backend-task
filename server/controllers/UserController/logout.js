@@ -4,7 +4,7 @@ const { LOGOUT_SUCCESS, INVALID_TOKEN } = require("../../constants/messages");
 
 const logout = async (req, res) => {
   try {
-    const authToken = req.header.authorization.split("Bearer ")[0];
+    const authToken = req.headers.authorization.split("Bearer ")[1];
 
     if (!authToken) {
         return res.status(401).send({ messgae: INVALID_TOKEN })

@@ -1,4 +1,4 @@
-const { Follower } = require("../../models");
+const { Follower, User } = require("../../models");
 const { FOLLWER_ADDED } = require("../../constants/messages");
 
 const follow = async (req, res) => {
@@ -10,7 +10,7 @@ const follow = async (req, res) => {
       return res.status(404).send({ message: "User does not exist" });
     }
     await Follower.create({
-      user_id: req.user.id,
+      followed_id: req.user.id,
       follower_id: user_id,
     });
 
