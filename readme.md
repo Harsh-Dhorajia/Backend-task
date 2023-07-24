@@ -56,4 +56,4 @@ git clone https://github.com/Harsh-Dhorajia/Backend-task.git
 | POSTGRES_USERNAME  | Database username        | `postgres`    |
 | POSTGRES_PASSWORD  | Database password        | `postgres`    |
 | SECRET_KEY         | Database password        | `twitter`     |
-| NODE_ENV         | Database password          | `development` |
+| NODE_ENV           | Database password        | `development` |
