@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "8165fc03-8ee3-41d6-a0c0-fa26c3f4617d",
+		"name": "Backend-Threads",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24220070"
+	},
+	"item": [
+		{
+			"name": "Tweets",
+			"item": [
+				{
+					"name": "Tweets feeds",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjkwMDk2MDk2LCJleHAiOjE2OTAxMzkyOTZ9._A0LD-D0Vxkk3lZomc2ak3RGbfq7grRJUXkzoKLW-vI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3001/api/tweet/tweet-feeds",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tweet",
+								"tweet-feeds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tweets",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkwMDk1NTQ1LCJleHAiOjE2OTAxMzg3NDV9.RoNZuNIidE6WNQlQGA2zZzhqL88QyQuxSlE02fI-rA4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3001/api/tweet/delete-tweet/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tweet",
+								"delete-tweet",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Tweet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkwMDk1NTQ1LCJleHAiOjE2OTAxMzg3NDV9.RoNZuNIidE6WNQlQGA2zZzhqL88QyQuxSlE02fI-rA4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Hello World 3 Shashi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/tweet/post-tweet",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tweet",
+								"post-tweet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Tweet",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkwMDk1NTQ1LCJleHAiOjE2OTAxMzg3NDV9.RoNZuNIidE6WNQlQGA2zZzhqL88QyQuxSlE02fI-rA4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Updated Tweet\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/tweet/edit-tweet/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tweet",
+								"edit-tweet",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get tweet by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkwMDk1NTQ1LCJleHAiOjE2OTAxMzg3NDV9.RoNZuNIidE6WNQlQGA2zZzhqL88QyQuxSlE02fI-rA4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3001/api/tweet/get-tweet/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tweet",
+								"get-tweet",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Followers",
+			"item": [
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjkwMDk2MDk2LCJleHAiOjE2OTAxMzkyOTZ9._A0LD-D0Vxkk3lZomc2ak3RGbfq7grRJUXkzoKLW-vI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/follower/unfollow",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"follower",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkwMDk1NTQ1LCJleHAiOjE2OTAxMzg3NDV9.RoNZuNIidE6WNQlQGA2zZzhqL88QyQuxSlE02fI-rA4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/follower/follow",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"follower",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Shashi@email.com\",\r\n    \"username\": \"Shashi\",\r\n    \"password\": \"Test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Harsh\",\r\n    \"password\": \"Test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
